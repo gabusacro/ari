@@ -238,19 +238,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Second section — DISCIPLINED SUCCESS */}
-      <section className="container-custom pt-12 pb-4 sm:pt-16 sm:pb-6">
-        <h2 className="font-serif font-semibold text-xl sm:text-h2 text-navy mb-5 text-center max-w-3xl mx-auto tracking-wide hover:font-bold transition-[font-weight] duration-150 whitespace-nowrap">
-          DISCIPLINED SUCCESS IN PROPRIETARY TRADING
-        </h2>
-        <p className="font-sans text-body sm:text-body-lg text-stone-text max-w-3xl mx-auto text-center leading-relaxed">
-          Isla Capital is a leading proprietary trading firm specializing in
-          guiding and nurturing skilled traders. We are committed to
-          disciplined success, unwavering risk management, and sustainable
-          profitability.
-        </p>
-        <div className="mt-6 flex justify-center">
-          <span className="h-1 w-16 rounded-full bg-gradient-to-r from-gold/60 to-gold/30" aria-hidden />
+      {/* Second section — DISCIPLINED SUCCESS (centered block + centered text) */}
+      <section className="section-disciplined pt-12 pb-4 sm:pt-16 sm:pb-6 w-full px-4 sm:px-6 lg:px-8 box-border">
+        <div className="max-w-3xl mx-auto box-border" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
+          <h2 className="font-serif font-semibold text-xl sm:text-h2 text-navy mb-5 tracking-wide hover:font-bold transition-[font-weight] duration-150 whitespace-nowrap" style={{ textAlign: "center" }}>
+            DISCIPLINED SUCCESS IN PROPRIETARY TRADING
+          </h2>
+          <p className="font-sans text-body sm:text-body-lg text-stone-text leading-relaxed m-0" style={{ textAlign: "center" }}>
+            Isla Capital is a leading proprietary trading firm specializing in guiding and nurturing skilled traders. We are committed to disciplined success, unwavering risk management, and sustainable profitability.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <span className="h-1 w-16 rounded-full bg-gradient-to-r from-gold/60 to-gold/30" aria-hidden />
+          </div>
         </div>
       </section>
 

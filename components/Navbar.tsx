@@ -55,11 +55,11 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-[#0a1929] border-b border-navy-light overflow-visible relative pt-4 pb-2 lg:pt-4 lg:pb-2">
-      <nav className="container-custom relative flex items-center justify-between gap-4 sm:gap-6 min-h-12 py-2 lg:py-4 lg:min-h-24 lg:gap-8">
+      <nav className="container-custom relative flex items-center justify-between gap-4 sm:gap-6 min-h-12 py-2 lg:py-4 lg:min-h-24 lg:gap-8 w-full">
         {/* Left spacer on mobile/tablet only — pushes hamburger to the right; hidden on desktop */}
         <div className="flex-1 min-w-0 lg:hidden" aria-hidden />
-        {/* Nav links — first in DOM on desktop so they stay LEFT; hidden on mobile/tablet */}
-        <ul className="hidden list-none items-center gap-6 lg:gap-8 p-0 lg:flex lg:flex-nowrap lg:pr-4 shrink-0">
+        {/* Nav links — desktop: left; hidden on mobile/tablet */}
+        <ul className="hidden list-none items-center gap-6 lg:gap-8 p-0 m-0 lg:flex lg:flex-nowrap lg:pr-4 shrink-0">
           {navLinks.map(({ href, label }) => (
             <li key={href} className="shrink-0">
               <Link
@@ -86,12 +86,12 @@ export default function Navbar() {
             Contact Us
           </Link>
         </div>
-        {/* Logo vertical nudge (desktop): adjust here. Current: 0 (centered). Use lg:translate-y-[1px] down or lg:translate-y-[-1px] up. */}
-        <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center order-2 w-full lg:absolute lg:left-1/2 lg:top-1/2 lg:flex-none lg:-translate-x-1/2 lg:-translate-y-1/2 lg:translate-y-0 lg:pointer-events-none lg:z-10">
-          <div className="lg:pointer-events-auto lg:flex lg:flex-col lg:items-center lg:h-44 lg:justify-center lg:relative lg:z-10">
+        {/* Logo: centered horizontally and vertically in navbar (top to bottom) */}
+        <div className="absolute inset-x-0 top-1/2 flex justify-center items-center order-2 pointer-events-none z-10" style={{ transform: "translateY(-50%)" }}>
+          <div className="pointer-events-auto flex items-center justify-center shrink-0">
             <Link
               href="/"
-              className="flex items-center justify-center hover-fade no-underline shrink-0"
+              className="flex items-center justify-center hover-fade no-underline"
               onClick={closeMenu}
             >
               <Image

@@ -152,6 +152,18 @@
     @apply w-full mx-auto px-6;
     max-width: var(--container-narrow);
   }
+
+  /* Force centered text for DISCIPLINED SUCCESS section */
+  .section-centered,
+  .section-centered h2,
+  .section-centered p {
+    text-align: center;
+  }
+
+  .section-disciplined h2,
+  .section-disciplined p {
+    text-align: center !important;
+  }
 }
 
 /* ==========================================================================
@@ -171,15 +183,15 @@
     @apply opacity-80;
   }
 
-  /* 2026-style cards: lift on hover (shadow only) */
+  /* 2026-style cards: visible shadow by default, stronger on hover */
   .card-lift {
     @apply transition-shadow duration-200 ease-out;
   }
 
   .card-lift:hover {
-    box-shadow: 0 2px 4px -1px rgb(15 28 46 / 0.06),
-      0 8px 20px -4px rgb(15 28 46 / 0.1),
-      0 16px 40px -8px rgb(15 28 46 / 0.08);
+    box-shadow: 0 4px 12px 0 rgb(15 28 46 / 0.1),
+      0 12px 32px -4px rgb(15 28 46 / 0.14),
+      0 24px 56px -8px rgb(15 28 46 / 0.16);
   }
 
   /* Primary CTA: left-to-right gradient (#c4a26d → #966e44), white text */
