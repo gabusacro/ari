@@ -164,6 +164,19 @@
   .section-disciplined p {
     text-align: center !important;
   }
+
+  /* Force every element in DISCIPLINED SUCCESS block to center (overrides any other rule) */
+  .section-disciplined-inner,
+  .section-disciplined-inner h2,
+  .section-disciplined-inner p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .section-disciplined-inner p {
+    display: block;
+    width: 100%;
+  }
 }
 
 /* ==========================================================================

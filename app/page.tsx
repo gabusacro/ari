@@ -238,15 +238,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Second section — DISCIPLINED SUCCESS (centered block + centered text) */}
-      <section className="section-disciplined pt-12 pb-4 sm:pt-16 sm:pb-6 w-full px-4 sm:px-6 lg:px-8 box-border">
-        <div className="max-w-3xl mx-auto box-border" style={{ textAlign: "center", marginLeft: "auto", marginRight: "auto" }}>
-          <h2 className="font-serif font-semibold text-xl sm:text-h2 text-navy mb-5 tracking-wide hover:font-bold transition-[font-weight] duration-150 whitespace-nowrap" style={{ textAlign: "center" }}>
-            DISCIPLINED SUCCESS IN PROPRIETARY TRADING
-          </h2>
-          <p className="font-sans text-body sm:text-body-lg text-stone-text leading-relaxed m-0" style={{ textAlign: "center" }}>
-            Isla Capital is a leading proprietary trading firm specializing in guiding and nurturing skilled traders. We are committed to disciplined success, unwavering risk management, and sustainable profitability.
-          </p>
+      {/* Second section — DISCIPLINED SUCCESS (all content forced center) */}
+      <section className="section-disciplined flex flex-col items-center justify-center pt-12 pb-12 sm:pt-16 sm:pb-16 w-full box-border min-h-[280px] px-4 sm:px-6 lg:px-8">
+        <div className="section-disciplined-inner max-w-3xl w-full mx-auto">
+          <h2 className="font-serif font-semibold text-xl sm:text-h2 text-navy mb-5 tracking-wide hover:font-bold transition-[font-weight] duration-150">DISCIPLINED SUCCESS IN PROPRIETARY<br />TRADING</h2>
+          <p className="font-sans text-body sm:text-body-lg text-stone-text leading-relaxed m-0">Isla Capital is a leading proprietary trading firm specializing in guiding and nurturing skilled traders. We are committed to disciplined success, unwavering risk management, and sustainable profitability.</p>
           <div className="mt-6 flex justify-center">
             <span className="h-1 w-16 rounded-full bg-gradient-to-r from-gold/60 to-gold/30" aria-hidden />
           </div>
