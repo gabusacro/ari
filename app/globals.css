@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Isla Capital — Design system tokens (desktop-first)
+   ========================================================================== */
+
+:root {
+  /* Primary: Navy */
+  --color-navy: #0f1c2e;
+  --color-navy-light: #1a2d47;
+  --color-navy-dark: #080e18;
+
+  /* Surface / off-white stone */
+  --color-stone: #fafaf9;
+  --color-stone-light: #ffffff;
+  --color-stone-dark: #f5f5f4;
+  --color-stone-text: #292524; /* body text on stone */
+
+  /* Muted gold accent (very subtle) */
+  --color-gold: #b5a88f;
+  --color-gold-muted: rgba(181, 168, 143, 0.25);
+
+  /* Container widths */
+  --container-max: 72rem;
+  --container-narrow: 42rem;
+
+  /* Desktop-first spacing */
+  --spacing-section: 6rem;
+  --spacing-block: 2.5rem;
+  --spacing-element: 1rem;
+
+  /* Typography scale (for base styles, avoids circular @apply) */
+  --text-display: 3.75rem;
+  --text-display-leading: 1.1;
+  --text-h1: 3rem;
+  --text-h1-leading: 1.15;
+  --text-h2: 2.25rem;
+  --text-h2-leading: 1.2;
+  --text-h3: 1.5rem;
+  --text-h3-leading: 1.3;
+  --text-h4: 1.25rem;
+  --text-h4-leading: 1.35;
+}
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply font-sans text-body bg-stone;
+    color: var(--color-stone-text);
+  }
+
+  /* Headings use serif, desktop-first scale (raw CSS to avoid circular @apply) */
+  h1 {
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: var(--text-display);
+    line-height: var(--text-display-leading);
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
+  }
+
+  h2 {
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: var(--text-h2);
+    line-height: var(--text-h2-leading);
+    letter-spacing: -0.01em;
+    color: var(--color-navy);
+  }
+
+  h3 {
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: var(--text-h3);
+    line-height: var(--text-h3-leading);
+    color: var(--color-navy);
+  }
+
+  h4 {
+    font-family: var(--font-heading), Georgia, serif;
+    font-size: var(--text-h4);
+    line-height: var(--text-h4-leading);
+    color: var(--color-navy);
+  }
+}
+
+/* ==========================================================================
+   Typography scale (utility classes)
+   ========================================================================== */
+
+@layer components {
+  /* Serif headings: use with text-navy when needed (base h1–h4 already get color) */
+  .heading-display {
+    @apply font-serif text-display text-navy;
+  }
+
+  .heading-1 {
+    @apply font-serif text-h1 text-navy;
+  }
+
+  .heading-2 {
+    @apply font-serif text-h2 text-navy;
+  }
+
+  .heading-3 {
+    @apply font-serif text-h3 text-navy;
+  }
+
+  .heading-4 {
+    @apply font-serif text-h4 text-navy;
+  }
+
+  .body-lg {
+    @apply font-sans text-body-lg;
+  }
+
+  .body {
+    @apply font-sans text-body;
+  }
+
+  .body-sm {
+    @apply font-sans text-body-sm;
+  }
+
+  .caption {
+    @apply font-sans text-caption;
+  }
+
+  /* Gold accent text (subtle) */
+  .text-accent {
+    @apply text-gold-muted;
+  }
+}
+
+/* ==========================================================================
+   Container rules
+   ========================================================================== */
+
+@layer components {
+  .container-custom {
+    @apply w-full mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: var(--container-max);
+  }
+
+  .container-narrow {
+    @apply w-full mx-auto px-6;
+    max-width: var(--container-narrow);
+  }
+}
+
+/* ==========================================================================
+   Transitions only: hover + subtle fade (no other animations)
+   ========================================================================== */
+
+@layer utilities {
+  .transition-default {
+    @apply transition-all duration-150 ease-out;
+  }
+
+  .hover-fade {
+    @apply transition-opacity duration-150 ease-out;
+  }
+
+  .hover-fade:hover {
+    @apply opacity-80;
+  }
+
+  /* 2026-style cards: lift on hover (shadow only) */
+  .card-lift {
+    @apply transition-shadow duration-200 ease-out;
+  }
+
+  .card-lift:hover {
+    box-shadow: 0 2px 4px -1px rgb(15 28 46 / 0.06),
+      0 8px 20px -4px rgb(15 28 46 / 0.1),
+      0 16px 40px -8px rgb(15 28 46 / 0.08);
+  }
+
+  /* Primary CTA: left-to-right gradient (#c4a26d → #966e44), white text */
+  .btn-gradient {
+    background: linear-gradient(to right, #c4a26d 0%, #966e44 100%);
+    color: #fff;
+  }
+
+  .btn-gradient:hover {
+    background: linear-gradient(to right, #c9a876 0%, #9d7550 100%);
+  }
+
+  /* Lively hero text gradient (gold → stone) */
+  .text-gradient-hero {
+    background: linear-gradient(135deg, #b5a88f 0%, #e7e5e4 50%, #fafaf9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glassmorphic badge/card */
+  .glass-badge {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+}
